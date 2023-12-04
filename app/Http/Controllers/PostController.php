@@ -78,7 +78,7 @@ class PostController extends Controller
             'name'=> 'required|max:255',
             'news_category_id'=>'required',
             'description'=>'required|min:10',
-            'photo'=>'required|image|mimes:png,jpg,webp,jpeg',
+            'photo'=>'nullable|image|mimes:png,jpg,webp,jpeg',
         ]);
         $request['featured'] = $request->featured ?? 0;
         $new = $request->all();
