@@ -14,10 +14,12 @@ class NewsCategoryFactory extends Factory
      *
      * @return array<string, mixed>
      */
+
+     private $categories =['news','game','education','sport','wars','art','fashion'];
     public function definition(): array
     {
         return [
-            'name' => fake()->name()
+            'name' => fake()->randomElement($this->categories),
         ];
     }
 }

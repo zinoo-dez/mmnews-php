@@ -12,6 +12,7 @@
                         </h3>
                         <p>{{ $post->description }} </p>
                         <p>{{ $post->created_at->diffForHumans() }}</p>
+                        <p>Post By: <a href="{{route('users.show',$post->user->id)}}">{{$post->user->name}}</a> </p>
                     </div>
                     <img src="{{ asset('storage/'.$post->photo) }}" width="100" alt="photo">
 

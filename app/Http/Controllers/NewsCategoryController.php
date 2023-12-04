@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreNewsCategoryRequest;
 use App\Http\Requests\UpdateNewsCategoryRequest;
 use App\Models\NewsCategory;
+use App\Models\User;
 
 class NewsCategoryController extends Controller
 {
@@ -39,6 +40,14 @@ class NewsCategoryController extends Controller
     {
         //
     }
+
+    public function showPostsByCategory(NewsCategory $newscategory, User $user)
+{
+    // Fetch posts by the clicked category and the user
+    $posts = $user->posts()->where('news_category_id', $newscategory->id)->get();
+
+    return view('newscategories.show', compact('newscategory', 'user', 'posts'));
+}
 
     /**
      * Show the form for editing the specified resource.

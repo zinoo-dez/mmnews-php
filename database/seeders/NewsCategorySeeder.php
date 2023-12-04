@@ -13,6 +13,6 @@ class NewsCategorySeeder extends Seeder
      */
     public function run(): void
     {
-        NewsCategory::factory(5)->create();
+        NewsCategory::factory(10)->create();
     }
 }

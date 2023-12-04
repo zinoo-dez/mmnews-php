@@ -18,6 +18,7 @@ class PostFactory extends Factory
     {
         return [
             'news_category_id' => rand(1, 5),
+            'user_id' => rand(1, 5),
             'name' => fake()->name(),
             'photo' => fake()->imageUrl(300, 300, '.jpeg'),
             'description' => fake()->sentence(10),

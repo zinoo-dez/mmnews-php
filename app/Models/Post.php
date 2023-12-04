@@ -9,4 +9,11 @@ class Post extends Model
 {
     use HasFactory;
     protected $fillable = ['name','news_category_id','description','photo','featured'];
+
+    public function user() {
+        return $this->belongsTo(User::class,'user_id');
+    }
+    public function newscategory() {
+        return $this->belongsTo(NewsCategory::class,'news_category_id');
+    }
 }
