@@ -44,9 +44,6 @@
                 <x-primary-button>
                     {{ __('Create Post') }}
                 </x-primary-button>
-
-
-
             </form>
 
         </div>
