@@ -21,6 +21,13 @@
                         Posts
                     </x-nav-link>
                 </div>
+                @auth
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('users.show',auth()->user()->id)" :active="request()->routeIs('users.show',auth()->user()->id)">
+                       My Posts
+                    </x-nav-link>
+                </div>
+                @endauth
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('posts.create')" :active="request()->routeIs('posts.create')">
                         Posts +
