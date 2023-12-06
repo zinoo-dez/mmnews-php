@@ -12,6 +12,9 @@
                     <p>{{ $post->description }} </p>
                     <p>{{ $post->created_at->diffForHumans() }}</p>
                 </div>
+                @if (auth()->user()->id === $post->user->id)
+
+
                 @auth
                     <div class="flex">
                         <a href="{{ route('posts.edit', $post->id) }}"
@@ -24,6 +27,7 @@
                         </form>
                     </div>
                 @endauth
+                @endif
             </div>
 
 
