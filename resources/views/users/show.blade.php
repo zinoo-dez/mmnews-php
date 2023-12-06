@@ -31,6 +31,7 @@
                                 </h3>
                                 <p>{{ $post->description }} </p>
                                 <p>{{ $post->created_at->diffForHumans() }}</p>
+                                @if (auth()->user()->id === $post->user->id)
                                 <div class="flex">
                                     <a href="{{ route('posts.edit', $post->id) }}"
                                         class="bg-yellow-500 text-white py-2 px-4 rounded-md mr-2">Edit</a>
@@ -41,6 +42,7 @@
                                         <button class="bg-red-500 text-white py-2 px-4 rounded-md">Delete</button>
                                     </form>
                                 </div>
+                                @endif
                            </div>
 
                                 <hr>

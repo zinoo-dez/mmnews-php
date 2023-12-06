@@ -43,7 +43,7 @@
 
                 <details class="dropdown">
                     <summary class="m-1 btn">open or close</summary>
-                    <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+                    <ul class="p-2 shadow menu dropdown-content z-[99999] bg-green-500 rounded-box w-52">
                         @foreach (DB::table('news_categories')->get() as $newscategory)
                         <p><a href="{{route('newscategories.show',['newscategory' =>$newscategory->id, 'user' => auth()->user()->id])}}">{{$newscategory->name}}</a></p>
                     @endforeach
