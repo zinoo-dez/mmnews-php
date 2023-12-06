@@ -39,8 +39,17 @@
                         Register
                     </x-nav-link>
                 </div>
-             
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
 
+                <details class="dropdown">
+                    <summary class="m-1 btn">open or close</summary>
+                    <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+                        @foreach (DB::table('news_categories')->get() as $newscategory)
+                        <p><a href="{{route('newscategories.show',['newscategory' =>$newscategory->id, 'user' => auth()->user()->id])}}">{{$newscategory->name}}</a></p>
+                    @endforeach
+                    </ul>
+                  </details>
+                </div>
             </div>
             @auth
 
