@@ -8,6 +8,7 @@ use App\Models\NewsCategory;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
@@ -49,6 +50,7 @@ class PostController extends Controller
             $new['photo'] = $photoPath;
         }
         // dd($new);
+        $new['user_id'] = auth()->user()->id;
         Post::create($new);
         return redirect()->route('posts.index')->with('message',"post created success");
 

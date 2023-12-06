@@ -72,4 +72,10 @@ class NewsCategoryController extends Controller
     {
         //
     }
+
+    public function all(){
+        $categories = NewsCategory::all();
+
+        return view('layouts.navigation',compact('categories'));
+    }
 }

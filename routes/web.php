@@ -15,7 +15,7 @@ Route::get('/dashboard', function () {
 })->name('dashboard');
 
 
-
+Route::get("/category",[NewsCategoryController::class,'all'])->name('category.all');
 
 
 Route::middleware('auth')->group(function () {

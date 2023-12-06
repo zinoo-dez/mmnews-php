@@ -1,3 +1,4 @@
+
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -22,11 +23,11 @@
                     </x-nav-link>
                 </div>
                 @auth
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('users.show',auth()->user()->id)" :active="request()->routeIs('users.show',auth()->user()->id)">
-                       My Posts
-                    </x-nav-link>
-                </div>
+                    <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                        <x-nav-link :href="route('users.show', auth()->user()->id)" :active="request()->routeIs('users.show', auth()->user()->id)">
+                            My Posts
+                        </x-nav-link>
+                    </div>
                 @endauth
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('posts.create')" :active="request()->routeIs('posts.create')">
@@ -35,9 +36,11 @@
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('register')" :active="request()->routeIs('register')">
-                    Register
+                        Register
                     </x-nav-link>
                 </div>
+             
+
             </div>
             @auth
 
